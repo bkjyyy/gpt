@@ -168,7 +168,7 @@ docker run --name chatgpt-web \
            -e TIMEOUT_MS=100000 \
            -e HTTPS_PROXY= \
            -e ALL_PROXY= \
-           jason61/gptweb-beta:latest
+           jason61/gpt-web:latest
 ```
 
 # 新手选这个后台运行
@@ -178,7 +178,7 @@ docker run --name chatgpt-web \
            -p 3002:3002 \
            -e OPENAI_API_KEY= \
            -e OPENAI_ACCESS_TOKEN= \
-					 -e AUTH_SECRET_KEY= \
+           -e AUTH_SECRET_KEY= \
            -e OPENAI_API_BASE_URL= \
            -e API_REVERSE_PROXY= \
            -e SOCKS_PROXY_HOST= \
@@ -187,7 +187,7 @@ docker run --name chatgpt-web \
            -e HTTPS_PROXY= \
            -e ALL_PROXY= \
            --restart=always \
-           jason61/gptweb-beta:latest
+           jason61/gpt-web:latest
 ```
 
 # 运行地址
@@ -204,7 +204,7 @@ version: '3'
 
 services:
   app:
-    image: jason61/gptweb-beta # 总是使用 latest ,更新时重新 pull 该 tag 镜像即可
+    image: jason61/gpt-web # 总是使用 latest ,更新时重新 pull 该 tag 镜像即可
     ports:
       - 127.0.0.1:3002:3002
     environment:
